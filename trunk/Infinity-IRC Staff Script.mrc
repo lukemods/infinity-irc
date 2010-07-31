@@ -24,8 +24,8 @@ alias inf.var.setup {
   set %Infinity-IRC.g.inappronicks Your nickname is inappropriate, Please return when you pick a more suitable nick.
   set %Infinity-IRC.g.flood Flooding is not permitted on Infinity-IRC.
   set %Infinity-IRC.g.baneva Attempting to evade a ban is a serious infraction and only results in a longer ban.
+  set %Infinity-IRC.g.pornlink Inappropriate or pornographic links displayed in public channels are not tolerated here.
   ; ----Need's to be added----
-  ;set %Infinity-IRC.g.pornlink Inappropriate or pornographic links displayed in public channels are not tolerated here.
   ;set %Infinity-IRC.g.proxies The use of an open proxy to connect to the network is not allowed.
   ;set %Infinity-IRC.g.amsg AMSGs considered to be spam are not allowed.
   ; ----Oper Up Section----
@@ -100,6 +100,7 @@ menu nicklist {
   ....No PMs:/infbantype gline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.msgsnoperm
   ....Malware:/infbantype gline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.malware
   ....Hacking:/infbantype gline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.hack
+  ....Pornographic Links:/infbantype gline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.pornlink
   ....Inappropriate Nicks:/infbantype gline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.inappronicks
   ....Flooding:/infbantype gline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.flood
   ..GZ-line
@@ -115,6 +116,7 @@ menu nicklist {
   ....No PMs:/infbantype gzline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.msgsnoperm
   ....Malware:/infbantype gzline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.malware
   ....Hacking:/infbantype gzline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.hack
+  ....Pornographic Links:/infbantype gzline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.pornlink
   ....Inappropriate Nicks:/infbantype gzline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.inappronicks
   ....Flooding:/infbantype gzline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.flood
   ..K-Line
@@ -130,6 +132,7 @@ menu nicklist {
   ....No PMs:/infbantype kline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.msgsnoperm
   ....Malware:/infbantype kline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.malware
   ....Hacking:/infbantype kline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.hack
+  ....Pornographic Links:/infbantype kline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.pornlink
   ....Inappropriate Nicks:/kline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.inappronicks
   ....Flooding:/infbantype kline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.flood
   ..Kill
@@ -145,6 +148,7 @@ menu nicklist {
   ....No PMs:/Kill $$1 %Infinity-IRC.g.msgsnoperm
   ....Malware:/Kill $$1 %Infinity-IRC.g.malware
   ....Hacking:/Kill $$1 %Infinity-IRC.g.hack
+  ....Pornographic Links:/kill $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.pornlink
   ....Inappropriate Nicks:/Kill $$1 %Infinity-IRC.g.inappronicks
   ....Flooding:/kill $$1 %Infinity-IRC.g.flood
   ..Shun
@@ -161,6 +165,7 @@ menu nicklist {
   .....No PMs:/shun $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.msgsnoperm
   .....Malware:/shun $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.malware
   .....Hacking:/shun $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.hack
+  .....Pornographic Links:/shun $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.pornlink
   .....Inappropriate Nicks:/shun $$1 $$?"Time Limit? (Use server format)" %Infinity-IRC.g.inappronicks
   .....Flooding:/shun $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.flood
   ...Session (TempShun)
@@ -176,6 +181,7 @@ menu nicklist {
   .....No PMs:/tempshun $$1 %Infinity-IRC.g.msgsnoperm
   .....Malware:/tempshun $$1 %Infinity-IRC.g.malware
   .....Hacking:/tempshun $$1 %Infinity-IRC.g.hack
+  .....Pornographic Links:/tempshun $$1 %Infinity-IRC.g.pornlink
   .....Inappropriate Nicks:/tempshun $$1 %Infinity-IRC.g.inappronicks
   .....Flooding:/tempshun $$1 %Infinity-IRC.g.flood
 
