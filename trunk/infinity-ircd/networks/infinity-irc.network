@@ -1,0 +1,47 @@
+/*
+ * Infinity-IRC () Network Configuration File
+ * --------------------------------------------------
+ *  Added-at:     11:35 AM Saturday, July 31, 2010
+ *  Author:       Bkil (Paul Loizeaux)
+ *  E-Mail:       PaulLoizeaux@gmail.com
+ *  $Id: Infinity-IRC,v 1.0.0.0 11:36 AM Saturday, July 31, 2010 Bkil Exp $
+ *	Source: unrealircd.conf on Netgear.InfinityIRC.com server owned by iYorkie
+ *	Comment format copied from unreal-test.network file
+ * Cloak key comment: You must get the cloak keys from a member of network staff. They can't be included in this file since they are secret and this will be available to the public since it is on SVN.
+ * -----------------------------------------
+ */
+
+/* Network configuration */
+set {
+	network-name 		"Infinity-IRC";
+	default-server 		"irc.infinityirc.com";
+	services-server 	"services.infinityirc.com";
+	stats-server 		"stats.infinityirc.com";
+	help-channel 		"#Support";
+	hiddenhost-prefix	"hiddenhost";
+	/* prefix-quit 		"no"; */
+	/* Cloak keys should be the same at all servers on the network.
+	 * They are used for generating masked hosts and should be kept secret.
+	 * The keys should be 3 random strings of 5-100 characters
+	 * (10-20 chars is just fine) and must consist of lowcase (a-z),
+	 * upcase (A-Z) and digits (0-9) [see first key example].
+	 * HINT: On *NIX, you can run './unreal gencloak' in your shell to let
+	 *       Unreal generate 3 random strings for you.
+	 */
+	cloak-keys {
+	/* Get keys from staff, can't include since they're secret. */
+		"GET FROM STAFF";
+		"GET FROM STAFF";
+		"GET FROM STAFF";
+	};
+	/* on-oper host */
+	hosts {
+		local		"infinityirc.com";
+		global		"infinityirc.com";
+		coadmin		"infinityirc.com";
+		admin		"infinityirc.com";
+		servicesadmin 	"infinityirc.com";
+		netadmin 	"infinityirc.com";
+		host-on-oper-up "yes";
+	};
+};
