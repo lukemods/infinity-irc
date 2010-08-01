@@ -25,9 +25,8 @@ alias inf.var.setup {
   set %Infinity-IRC.g.flood Flooding is not permitted on Infinity-IRC.
   set %Infinity-IRC.g.baneva Attempting to evade a ban is a serious infraction and only results in a longer ban.
   set %Infinity-IRC.g.pornlink Inappropriate or pornographic links displayed in public channels are not tolerated here.
-  ; ----Need's to be added----
-  ;set %Infinity-IRC.g.proxies The use of an open proxy to connect to the network is not allowed.
-  ;set %Infinity-IRC.g.amsg AMSGs considered to be spam are not allowed.
+  set %Infinity-IRC.g.proxies The use of an open proxy to connect to the network is not allowed.
+  set %Infinity-IRC.g.amsg AMSGs considered to be spam are not allowed.
   ; ----Oper Up Section----
   ;set %Infinity-IRC-UID $$?="Please enter your UID for opering up:"
   ;set %Infinity-IRC-PASS $$?="Please enter your password for opering up:"
@@ -91,6 +90,7 @@ menu nicklist {
   ...G-line (No Reason):/infbantype gline $$1 $$?="Time Limit? (Use server format)"
   ...G-line (Custom):/infbantype gline $$1 $$?="Time Limit? (Use server format)" $$?="Enter a reason"
   ...G-line (Scripted)
+  ....AMSG's:/infbantype gline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.amsg
   ....Attitude:/infbantype gline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.attitude
   ....Hate Speech:/infgline gline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.hatespeech
   ....Harassment:/infbantype gline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.harassment
@@ -101,12 +101,14 @@ menu nicklist {
   ....Malware:/infbantype gline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.malware
   ....Hacking:/infbantype gline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.hack
   ....Pornographic Links:/infbantype gline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.pornlink
+  ....Proxies:/infbantype gline $$1 $$?="Time Limit? (use server format)" %Infinity-IRC.g.proxies
   ....Inappropriate Nicks:/infbantype gline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.inappronicks
   ....Flooding:/infbantype gline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.flood
   ..GZ-line
   ...GZ-line (No Reason):/infbantype gzline $$1 $$?="Time Limit? (Use server format)"
   ...GZ-line (Custom):/infbantype gzline $$1 $$?="Time Limit? (Use server format)" $$?="Enter a reason"
   ...GZ-line (Scripted)
+  ....AMSG's:/infbantype gzline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.amsg
   ....Attitude:/infbantype gzline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.attitude
   ....Hate Speech:/infbantype gzline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.hatespeech
   ....Harassment:/infbantype gzline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.harassment
@@ -117,12 +119,14 @@ menu nicklist {
   ....Malware:/infbantype gzline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.malware
   ....Hacking:/infbantype gzline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.hack
   ....Pornographic Links:/infbantype gzline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.pornlink
+  ....Proxies:/infbantype gzline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.proxies
   ....Inappropriate Nicks:/infbantype gzline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.inappronicks
   ....Flooding:/infbantype gzline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.flood
   ..K-Line
   ...K-line (No Reason):/infbantype kline $$1 $$?="Time Limit? (Use server format)"
   ...K-line (Custom):/infbantype kline $$1 $$?="Time Limit? (Use server format)" $$?="Enter a reason"
   ...K-line (Scripted)
+  ....AMSG's:/infbantype kline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.amsg
   ....Attitude:/infbantype kline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.attitude
   ....Hate Speech:/infbantype kline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.hatespeech
   ....Harassment:/infbantype kline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.harassment
@@ -133,12 +137,14 @@ menu nicklist {
   ....Malware:/infbantype kline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.malware
   ....Hacking:/infbantype kline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.hack
   ....Pornographic Links:/infbantype kline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.pornlink
+  ....Proxies:/infbantype kline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.proxies
   ....Inappropriate Nicks:/kline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.inappronicks
   ....Flooding:/infbantype kline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.flood
   ..Kill
   ...Kill (No Reason):/infbantype Kill $$1 [ $+ $me $+ ] - No Reason
   ...Kill (Custom):/infbantype Kill $$1 $$?="Enter a reason"
   ...Kill (Scripted)
+  ....AMSG's:/kill $$1 %Infinity-IRC.g.amsg
   ....Attitude:/Kill $$1 %Infinity-IRC.g.attitude
   ....Hate Speech:/Kill $$1 %Infinity-IRC.g.hatespeech
   ....Harassment:/Kill $$1 %Infinity-IRC.g.harassment
@@ -148,7 +154,8 @@ menu nicklist {
   ....No PMs:/Kill $$1 %Infinity-IRC.g.msgsnoperm
   ....Malware:/Kill $$1 %Infinity-IRC.g.malware
   ....Hacking:/Kill $$1 %Infinity-IRC.g.hack
-  ....Pornographic Links:/kill $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.pornlink
+  ....Pornographic Links:/kill $$1 %Infinity-IRC.g.pornlink
+  ....Proxies:/kill $$1 %Infinity-IRC.g.proxies
   ....Inappropriate Nicks:/Kill $$1 %Infinity-IRC.g.inappronicks
   ....Flooding:/kill $$1 %Infinity-IRC.g.flood
   ..Shun
@@ -156,6 +163,7 @@ menu nicklist {
   ....Timed Shun (No Reason):/shun $$1 $$?="Time Limit? (Use server format)"
   ....Timed Shun (Custom):/shun $$1 $$?="Time Limit? (Use server format)" $$?="Enter a reason"
   ....Timed Shun (Scripted)
+  .....AMSG's:/shun $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.amsg
   .....Attitude:/shun $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.attitude
   .....Hate Speech:/shun $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.hatespeech
   .....Harassment:/shun $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.harassment
@@ -166,12 +174,14 @@ menu nicklist {
   .....Malware:/shun $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.malware
   .....Hacking:/shun $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.hack
   .....Pornographic Links:/shun $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.pornlink
+  .....Proxies:/shun $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.proxies
   .....Inappropriate Nicks:/shun $$1 $$?"Time Limit? (Use server format)" %Infinity-IRC.g.inappronicks
   .....Flooding:/shun $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.flood
   ...Session (TempShun)
   ....TempShun (No Reason):/tempshun $$1
   ....TempShun (Custom):/tempshun $$1 $$?="Enter a reason"
   ....TempShun (Scripted)
+  .....AMSG's:/tempshun $$1 %Infinity-IRC.g.amsg
   .....Attitude:/tempshun $$1 %Infinity-IRC.g.attitude
   .....Hate Speech:/tempshun $$1 %Infinity-IRC.g.hatespeech
   .....Harassment:/tempshun $$1 %Infinity-IRC.g.harassment
@@ -182,6 +192,7 @@ menu nicklist {
   .....Malware:/tempshun $$1 %Infinity-IRC.g.malware
   .....Hacking:/tempshun $$1 %Infinity-IRC.g.hack
   .....Pornographic Links:/tempshun $$1 %Infinity-IRC.g.pornlink
+  .....Proxies:/temoshun $$1 %Infinity-IRC.g.proxies
   .....Inappropriate Nicks:/tempshun $$1 %Infinity-IRC.g.inappronicks
   .....Flooding:/tempshun $$1 %Infinity-IRC.g.flood
 
