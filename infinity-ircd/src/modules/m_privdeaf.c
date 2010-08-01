@@ -81,7 +81,7 @@ DLLFUNC char *privdeaf_checkmsg(aClient *cptr, aClient *sptr, aClient *acptr, ch
 {
 	if ((acptr->umodes & UMODE_PRIVDEAF) && !IsAnOper(sptr) && !IsULine(sptr) && !IsServer(sptr))
 	{
-		sendnotice(sptr, "Message to '%s' not delivered: User does not accept private messages", acptr->name);
+		sendnotice(sptr, "Message to '%s' has not been sent. The user has +D set. This blocks private messages.", acptr->name);
 		return NULL;
 	} else
 		return text;
