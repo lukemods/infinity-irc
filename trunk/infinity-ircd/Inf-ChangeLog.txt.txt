@@ -1,0 +1,18 @@
+Change: Changed /version reply
+Change date: 31/07/2010
+-
+Change: Added DCC Exploits to Spamfilter
+Change date: 01/08/2010
+-
+Change: Added m_privdeaf into the IRCd
+Change date: 01/08/2010
+-
+Change: Added m_getinfo into the IRcd
+Change date: 01/08/2010
+-
+Change: Deleted nocolorumode module
+Change date: 01/08/2010
+-
+Change: Added anti-bot module made by GeekShed & changed some of the data sent to users
+Change data: 01/08/2010
+-
