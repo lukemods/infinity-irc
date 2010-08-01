@@ -93,6 +93,7 @@ menu nicklist {
  ..Forums:/say $1, you can find info and updates on our forums at http://forums.infinityirc.com/
  ..Chat:/say $1, you can get the web chat code and chat online at http://www.infinityirc.com/chat/
  ..Netsplit:/say $1, a netsplit is when 2 or more servers split from the rest of the network, so the link between Server1 and Server2 is broken. When the server reconnects, everyone will rejoin and the server will give back everyones status in the channel. For info on this in more detail, please see http://en.wikipedia.org/wiki/Netsplit
+ ..Voice:/say $1, voice (+v) allows you to chat when the channel is moderated (+m). Moderated Mode just simply stops non-voiced users from chatting. This mode is mainly used to stop attacks on the channel. 
 
   .User Mode $+ $chr(58) $gettok($usermode,1,32)
   ...$iif(D isincs $gettok($usermode,1,32),$style(1)) PM Block:{ if (D isincs $gettok($usermode,1,32)) { umode2 -D } | else { umode2 +D } }
