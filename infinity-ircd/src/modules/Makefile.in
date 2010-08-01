@@ -55,7 +55,7 @@ R_MODULES= \
 	 m_mode.so m_watch.so m_part.so m_join.so m_motd.so m_opermotd.so \
 	 m_botmotd.so m_lusers.so m_names.so m_svsnolag.so m_addmotd.so \
 	 m_svslusers.so m_banlink.so m_ircops.so m_privdeaf.so m_jumpserver.so \
-	 nocolorumode.so noctcp.so textban.so
+	 nocolorumode.so noctcp.so textban.so m_getinfo.so
 
 #note change of .c to .o
 COMMANDS=m_sethost.o m_chghost.o m_chgident.o m_setname.o m_setident.o \
@@ -79,7 +79,7 @@ COMMANDS=m_sethost.o m_chghost.o m_chgident.o m_setname.o m_setident.o \
 	 m_mode.o m_watch.o m_part.o m_join.o m_motd.o m_opermotd.o \
 	 m_botmotd.o m_lusers.o m_names.o m_svsnolag.o m_banlink.o \
 	 m_ircops.o m_privdeaf.o m_jumpserver.o nocolorumode.o noctcp.o \
-	 textban.o
+	 textban.o m_getinfo.o
 
 
 MODULES=commands.so cloak.so $(R_MODULES)
@@ -430,6 +430,9 @@ noctcp.o: noctcp.c $(INCLUDES)
 	
 textban.o: textban.c $(INCLUDES)
 	$(CC) $(CFLAGS) $(MODULEFLAGS)  -c textban.c
+	
+m_getinfo.o: m_getinfo.c $(INCLUDES)
+	$(CC) $(CFLAGS) $(MODULEFLAGS)  -c m_getinfo.c
 
 #############################################################################
 #             .so's section
@@ -867,9 +870,9 @@ noctcp.so: noctcp.c $(INCLUDES)
 	$(CC) $(CFLAGS) $(MODULEFLAGS) -DDYNAMIC_LINKING \
 		-o noctcp.so noctcp.c
 		
-textban.so: textban.c $(INCLUDES)
+m_getinfo.so: m_getinfo.c $(INCLUDES)
 	$(CC) $(CFLAGS) $(MODULEFLAGS) -DDYNAMIC_LINKING \
-		-o textban.so textban.c
+		-o m_getinfo.so m_getinfo.c
 
 #############################################################################
 #             and now the remaining modules...
