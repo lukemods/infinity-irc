@@ -1,5 +1,7 @@
 /* This module was written by GeekShed for the gs-ircd project 
- * and is not owned/licensed to Infinity in any way. */
+ * and is not owned/licensed to Infinity in any way. 
+ * Change: Changed the info that is sent to snomasked users
+ * Changed on: 01/08/2010 */
 
 
 #include "config.h"
