@@ -141,7 +141,7 @@ menu nicklist {
   ....Inappropriate Nicks:/kline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.inappronicks
   ....Flooding:/infbantype kline $$1 $$?="Time Limit? (Use server format)" %Infinity-IRC.g.flood
   ..Kill
-  ...Kill (No Reason):/infbantype Kill $$1 [ $+ $me $+ ] - No Reason
+  ...Kill (No Reason):/infbantype Kill $$1 $chr(91) $+ $me $+ $chr(93) - No Reason
   ...Kill (Custom):/infbantype Kill $$1 $$?="Enter a reason"
   ...Kill (Scripted)
   ....AMSG's:/kill $$1 %Infinity-IRC.g.amsg
