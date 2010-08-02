@@ -291,4 +291,4 @@ menu status {
 
 ;----------------Server Notices------------
 ;Tells you when someone whois'd you (Usermode +W must be set)
-on ^*:SNOTICE:*did a /whois on you*: { echo -a *** $2 Whois'd you at $time *** }
+;on ^*:SNOTICE:*did a /whois on you*: { echo -a *** $2 Whois'd you at $time *** }
