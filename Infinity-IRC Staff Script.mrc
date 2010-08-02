@@ -2,12 +2,17 @@
 :: Infinity IRC Network Operator Script ::
 :: Concept by Zetacon                   ::
 :: Owned by: Infinity IRC and staff     ::
-:: Main Contributor: Danneh             ::
-:: Contributors: Luke                   ::
+:: Main Contributor(s): Danneh          ::
+:: Contributor(s): Luke                 ::
 ::::::::::::::::::::::::::::::::::::::::::
 
 on *:LOAD:*: {
   inf.var.setup
+}
+
+on *:UNLOAD:*: {
+  unset %Infinity-IRC.g.*
+  echo -at Infinity-IRC Variables Unset.
 }
 
 alias inf.var.setup {
