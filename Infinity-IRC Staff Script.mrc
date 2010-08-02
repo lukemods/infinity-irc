@@ -195,7 +195,7 @@ menu nicklist {
   .....Proxies:/temoshun $$1 %Infinity-IRC.g.proxies
   .....Inappropriate Nicks:/tempshun $$1 %Infinity-IRC.g.inappronicks
   .....Flooding:/tempshun $$1 %Infinity-IRC.g.flood
-
+  .-
   .HostServ
   ..Set
   ...Nick Set:/vhost set $$1 $$?="Enter the nick's desired host:"
@@ -204,7 +204,7 @@ menu nicklist {
   ...Nick Delete:/msg hostserv del $$1
   ...Group Delete:/msg hostserv DELALL $$1
   ..List:/msg HostServ LIST $$?="Enter a keyword or list range"
-
+  .-
   .Oper Override
   ..SA Commands
   ...Join:/sajoin $$1 $$?="Enter the channels to force join (#chan1,#chan2,#chan3)"
@@ -222,6 +222,12 @@ menu nicklist {
   ...Temporary
   ..Channel Discipline
   ...Kick:/msg operserv kick $chan $$1 $$?="Enter a reason"
+  .-
+  .Encrypted Passwords
+  ..Crypt:/mkpasswd crypt $$?="Password:"
+  ..Sha1SSL:/mkpasswd sha1 $$?="Password:"
+  ..MD5SSL:/mkpasswd md5 $$?="Password:"
+
 }
 
 menu channel {
