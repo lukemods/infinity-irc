@@ -195,7 +195,6 @@ menu nicklist {
   .....Proxies:/temoshun $$1 %Infinity-IRC.g.proxies
   .....Inappropriate Nicks:/tempshun $$1 %Infinity-IRC.g.inappronicks
   .....Flooding:/tempshun $$1 %Infinity-IRC.g.flood
-  .-
   .HostServ
   ..Set
   ...Nick Set:/vhost set $$1 $$?="Enter the nick's desired host:"
@@ -239,16 +238,23 @@ menu channel {
   ..Set Private
   ...On:/msg BotServ SET $$?="Enter the bot's nick to set private" ON
   ...Off:/msg BotServ SET $$?="Enter the bot's nick to set private" OFF
-
+  .-
   .ChanServ
-  ..Drop:/msg ChanServ DROP $chan
-  ..Forbid:/msg ChanServ FORBID $chan $$?="Enter a reason"
-  ..Retrieve Channel Password:/msg ChanServ GETPASS $chan
-  ..Suspend:/msg ChanServ SUSPEND $chan $$?="Enter a reason"
-  ..Unsuspend:/msg ChanServ UNSUSPEND $chan
+  ..Drop:/msg ChanServ DROP $$?="Please enter a channel to drop:"
+  ..Forbid:/msg ChanServ FORBID $$?="Please enter a channel to drop:" $$?="Enter a reason"
+  ..Retrieve Channel Password:/msg ChanServ GETPASS $$?="Please enter a channel to drop:"
+  ..Suspend:/msg ChanServ SUSPEND $$?="Please enter a channel to drop:" $$?="Enter a reason"
+  ..Unsuspend:/msg ChanServ UNSUSPEND $$?="Please enter a channel to drop:"
   ..Set No Expire
-  ...On:/msg ChanServ SET $chan NOEXPIRE on
-  ...Off:/msg ChanServ SET $chan NOEXPIRE off
+  ...On:/msg ChanServ SET $$?="Please enter a channel to drop:" NOEXPIRE on
+  ...Off:/msg ChanServ SET $$?="Please enter a channel to drop:" NOEXPIRE off
+  .-
+  .NickServ
+  ..Drop:/msg NickServ DROP $$?="Please enter a NickName to drop:"
+  ..Forbid:/msg NickServ FORBID $$?="Please enter a NickName to forbid:" $$?="Please enter a reason to forbid the nick:"
+  ..Set No Expire
+  ...On:/msg NickServ SASET $$?="Please enter a NickName to set NoExpire onto:" ON
+  ...Off:/msg NickServ SASET $$?="Please enter a NickName to set NoExpire off:" OFF
 }
 
 menu status {
