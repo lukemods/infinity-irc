@@ -236,35 +236,38 @@ menu nicklist {
 
 menu channel {
   -
+  Infinity-IRC Commands
   .BotServ
-  ..Add:/msg BotServ BOT ADD $$?="Enter the bot's nick" $$?="Enter the bot's user" $$?="Enter the bot's host" $$?="Enter the bot's real name"
-  ..Change:/msg BotServ BOT CHANGE $$?="Enter the bot's old nick" $$?="Enter the bot's new nick" $$?="Enter a new user" $$?="Enter a new host" $$?="Enter a new real name"
-  ..Delete:/msg BotServ DEL $$?="Enter the bot's nick to delete"
-  ..Set Private
+  ..$iif(o !isincs $usermode,$style(2)) Add:/msg BotServ BOT ADD $$?="Enter the bot's nick" $$?="Enter the bot's user" $$?="Enter the bot's host" $$?="Enter the bot's real name"
+  ..$iif(o !isincs $usermode,$style(2)) Change:/msg BotServ BOT CHANGE $$?="Enter the bot's old nick" $$?="Enter the bot's new nick" $$?="Enter a new user" $$?="Enter a new host" $$?="Enter a new real name"
+  ..$iif(o !isincs $usermode,$style(2)) Delete:/msg BotServ DEL $$?="Enter the bot's nick to delete"
+  ..Assign:/msg BotServ ASSIGN $$?="Enter the channel to assign bot to:" $$?="Enter the Nickname of the bot to assign:"
+  ..Un-Assign:/msg BotServ UNASSIGN $$?="Enter the channel to un-assign the bot from:"
+  ..$iif(o !isincs $usermode,$style(2)) Set Private
   ...On:/msg BotServ SET $$?="Enter the bot's nick to set private" ON
   ...Off:/msg BotServ SET $$?="Enter the bot's nick to set private" OFF
   .-
   .ChanServ
   ..Drop:/msg ChanServ DROP $$?="Please enter a channel to drop:"
-  ..Forbid:/msg ChanServ FORBID $$?="Please enter a channel to drop:" $$?="Enter a reason"
+  ..$iif(o !isincs $usermode,$style(2)) Forbid:/msg ChanServ FORBID $$?="Please enter a channel to drop:" $$?="Enter a reason"
   ..Retrieve Channel Password:/msg ChanServ GETPASS $$?="Please enter a channel to drop:"
-  ..Suspend:/msg ChanServ SUSPEND $$?="Please enter a channel to drop:" $$?="Enter a reason"
-  ..Unsuspend:/msg ChanServ UNSUSPEND $$?="Please enter a channel to drop:"
+  ..$iif(o !isincs $usermode,$style(2)) Suspend:/msg ChanServ SUSPEND $$?="Please enter a channel to drop:" $$?="Enter a reason"
+  ..$iif(o !isincs $usermode,$style(2)) Unsuspend:/msg ChanServ UNSUSPEND $$?="Please enter a channel to drop:"
   ..Set No Expire
-  ...On:/msg ChanServ SET $$?="Please enter a channel to drop:" NOEXPIRE on
-  ...Off:/msg ChanServ SET $$?="Please enter a channel to drop:" NOEXPIRE off
+  ...$iif(o !isincs $usermode,$style(2)) On:/msg ChanServ SET $$?="Please enter a channel to drop:" NOEXPIRE on
+  ...$iif(o !isincs $usermode,$style(2)) Off:/msg ChanServ SET $$?="Please enter a channel to drop:" NOEXPIRE off
   .-
   .NickServ
   ..Drop:/msg NickServ DROP $$?="Please enter a NickName to drop:"
-  ..Forbid:/msg NickServ FORBID $$?="Please enter a NickName to forbid:" $$?="Please enter a reason to forbid the nick:"
-  ..Set No Expire
+  ..$iif(o !isincs $usermode,$style(2)) Forbid:/msg NickServ FORBID $$?="Please enter a NickName to forbid:" $$?="Please enter a reason to forbid the nick:"
+  ..$iif(o !isincs $usermode,$style(2)) Set No Expire
   ...On:/msg NickServ SASET $$?="Please enter a NickName to set NoExpire onto:" ON
   ...Off:/msg NickServ SASET $$?="Please enter a NickName to set NoExpire off:" OFF
 }
 
 menu status {
   -
-  Infinity-IRC Oper Menu
+  $iif(o !isincs $usermode,$style(2)) Infinity-IRC Oper Menu
   .ServerStats
   ..KZElines(Banned hosts/IP):/stats k
   ..Glines(Banned hosts&Shuns):/stats g
