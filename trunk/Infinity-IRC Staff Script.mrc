@@ -1,9 +1,9 @@
 ::::::::::::::::::::::::::::::::::::::::::
-:: Infinity IRC Network Operator Script ::
-:: Concept by Zetacon                   ::
-:: Owned by: Infinity IRC and staff     ::
-:: Main Contributor(s): Danneh          ::
-:: Contributor(s): Luke                 ::
+:: Infinity IRC Network Operator Script  ::
+:: Concept by Zetacon                      ::
+:: Owned by: Infinity IRC and staff       ::
+:: Main Contributor(s): Danneh            ::
+:: Contributor(s): Luke                    ::
 ::::::::::::::::::::::::::::::::::::::::::
 
 on *:LOAD:*: {
