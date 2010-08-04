@@ -4,7 +4,7 @@
 :: Owned by: Infinity IRC and staff       ::
 :: Main Contributor(s): Danneh            ::
 :: Contributor(s): Luke                    ::
-::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::: 
 
 on *:LOAD:*: {
   inf.var.setup
